@@ -6,8 +6,7 @@ public class DesactivadorPared : MonoBehaviour
 {
     public GameObject activador;
     TrampaPared scriptPared;
-    [SerializeField]
-    private bool _descativadorPresionado;
+    [SerializeField] private bool _descativadorPresionado;
     public bool descativadorPresionado
     {
         get { return _descativadorPresionado; }
@@ -24,26 +23,19 @@ public class DesactivadorPared : MonoBehaviour
         
     }
 
-    //private void OnTriggerEnter(Collider col)
-    //{
-    //    if (scriptPared.paredActivada && (col.gameObject.tag == "Player" || col.gameObject.tag == "Player2"))
-    //    {
-    //        scriptPared.paredActivada = false;
-    //        descativadorPresionado = true;
-    //        Debug.Log("hola");
-    //    }
-    //}
+
     private void OnTriggerStay(Collider col)
     {
-        if (scriptPared.paredActivada && col.gameObject.tag == "Player" || col.gameObject.tag == "Player2")
+        if (scriptPared.paredActivada && (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Player2")))
         {
             scriptPared.paredActivada = false;
             descativadorPresionado = true;
+            Debug.Log("Pared desactivada por: " + col.gameObject.name);
         }
     }
     private void OnTriggerExit(Collider col)
     {
-        if(scriptPared.paredActivada && col.gameObject.tag == "Player" || col.gameObject.tag == "Player2")
+        if(scriptPared.paredActivada && col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Player2"))
         {
             scriptPared.paredActivada = false;
             descativadorPresionado = false;

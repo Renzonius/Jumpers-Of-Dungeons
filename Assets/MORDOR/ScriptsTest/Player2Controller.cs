@@ -18,7 +18,6 @@ public class Player2Controller : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (!moverseAtras && Input.GetKey("up") && !moverseAdelante)

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Player2
   - Oscuridad
+  - Suelo
+  - JaulaTrampa
   layers:
   - Default
   - TransparentFX

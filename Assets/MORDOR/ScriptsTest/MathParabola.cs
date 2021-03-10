@@ -5,7 +5,6 @@ using System;
 
 public class MathParabola
 {
-
     public static Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
     {
         Func<float, float> f = x => -4 * height * x * x + 4 * height * x;
@@ -23,5 +22,4 @@ public class MathParabola
 
         return new Vector2(mid.x, f(t) + Mathf.Lerp(start.y, end.y, t));
     }
-
 }

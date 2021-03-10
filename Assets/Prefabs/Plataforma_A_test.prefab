@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2359232439249862604}
   - component: {fileID: 529553587861195526}
   - component: {fileID: 1698940132737823888}
-  m_Layer: 0
-  m_Name: Plataforma_A
-  m_TagString: Untagged
+  m_Layer: 9
+  m_Name: Plataforma_A_test
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042846830805363411}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: -3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

@@ -11,8 +11,7 @@ public class TrampaPared : MonoBehaviour
     public float velDesplazamiento;
     public GameObject desactivador;
     DesactivadorPared scriptDesactivador;
-    [SerializeField]
-    private bool _paredActivada;
+    [SerializeField] private bool _paredActivada;
     public bool paredActivada {
         get { return _paredActivada; } 
         set { _paredActivada = value; } 
@@ -22,31 +21,30 @@ public class TrampaPared : MonoBehaviour
     {
         scriptDesactivador = desactivador.GetComponent<DesactivadorPared>();
         posPared = pared.transform.localPosition;
-        posBloqueo = new Vector3(transform.localPosition.x, 0f, 7.5f);
+        //posBloqueo = new Vector3(transform.localPosition.x, 0f, 7.5f);
+        posBloqueo = new Vector3(transform.localPosition.x, -1f, 0);
     }
 
     void FixedUpdate()
     {
         if (paredActivada)
             pared.transform.localPosition = Vector3.MoveTowards(pared.transform.localPosition, posBloqueo, velDesplazamiento * Time.deltaTime);
-        else
+        else 
             pared.transform.localPosition = Vector3.MoveTowards(pared.transform.localPosition, posPared, velDesplazamiento * Time.deltaTime);
 
     }
 
-
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
-        if (!scriptDesactivador.descativadorPresionado && col.gameObject.tag == "Player" || col.gameObject.tag == "Player2")
+        if (!scriptDesactivador.descativadorPresionado && (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Player2")))
         {
-            paredActivada = true;
+                paredActivada = true;
         }
-
     }
 
     private void OnTriggerExit(Collider col)
     {
-        if(scriptDesactivador.descativadorPresionado || col.gameObject.tag == "Player" || col.gameObject.tag == "Player2")
+        if(scriptDesactivador.descativadorPresionado || col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Player2"))
         {
             paredActivada = false;
         }

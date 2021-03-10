@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
     //ParabolaController controladorSalto;
 
     Vector3 posicionPlataforma;
-    public GameObject objetivo;
     public bool moverseAdelante;
     public bool moverseAtras;
-    public bool moverseIzq;
-    public bool moverseDer;
+    public bool enSuelo;
+    //public bool moverseIzq;
+    //public bool moverseDer;
     public float velocidad = 20f;
     float distanciaSalto = 3f;
     public float esperarSalto = 0.5f;
@@ -36,27 +36,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (enSuelo)
+            Movimiento();
 
-        if (!moverseAtras && Input.GetKey("w") && !moverseAdelante)
-        {
-            posicionPlataforma = transform.position + new Vector3(0, 0, 5f);
-            moverseAdelante = true;
-        }
-        else if (!moverseAdelante && Input.GetKey("s") && !moverseAtras)
-        {
-            posicionPlataforma = transform.position + new Vector3(0, 0, -5f);
-            moverseAtras = true;
-        }
-        //else if (!moverseAdelante && !moverseDer && !moverseIzq && Input.GetKey("d") && !moverseAtras)
-        //{
-        //    posicionPlataforma = transform.position + new Vector3(5f, 0, 0);
-        //    moverseDer = true;
-        //}
-        //else if (!moverseAdelante && !moverseDer && !moverseIzq && Input.GetKey("a") && !moverseAtras)
-        //{
-        //    posicionPlataforma = transform.position + new Vector3(-5f, 0, 0);
-        //    moverseIzq = true;
-        //}
+
 
         if (moverseAdelante)
         {
@@ -82,6 +65,7 @@ public class PlayerController : MonoBehaviour
                 posicionPlataforma.z -= distanciaSalto;
             }
         }
+
         //else if (moverseDer)
         //{
         //    transform.position = Vector3.MoveTowards(transform.position, posicionPlataforma, velocidad * Time.deltaTime);
@@ -108,88 +92,125 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //if (Input.GetKey("w")) 
+    void Movimiento()
+    {
+        if (!moverseAtras && Input.GetKey("w") && !moverseAdelante)
+        {
+            posicionPlataforma = transform.position + new Vector3(0, 0, 5f);
+            moverseAdelante = true;
+        }
+        else if (!moverseAdelante && Input.GetKey("s") && !moverseAtras)
+        {
+            posicionPlataforma = transform.position + new Vector3(0, 0, -5f);
+            moverseAtras = true;
+        }
+        //else if (!moverseAdelante && !moverseDer && !moverseIzq && Input.GetKey("d") && !moverseAtras)
         //{
-        //    controladorSalto.ParabolaRoot = saltoAdelante;
-        //    controladorSalto.FollowParabola();
-
-        //    //direccion = controladorSalto.ParabolaRoot; //ADAPTAR PARA QUE ELIJA UNA DE LAS RUTAS (ATRAS, ADELANTE)
-        //    //controladorSalto.FollowParabola();
-
-        //    //GetComponent<ParabolaController>().FollowParabola();
+        //    posicionPlataforma = transform.position + new Vector3(5f, 0, 0);
+        //    moverseDer = true;
         //}
-        //else if (Input.GetKey("s"))
+        //else if (!moverseAdelante && !moverseDer && !moverseIzq && Input.GetKey("a") && !moverseAtras)
         //{
-        //    controladorSalto.ParabolaRoot = saltoAtras;
-        //    controladorSalto.FollowParabola();
-        //    //direccion = controladorSalto.ParabolaRoot[1];
+        //    posicionPlataforma = transform.position + new Vector3(-5f, 0, 0);
+        //    moverseIzq = true;
         //}
+    }
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.tag == "Suelo")
+        {
+            enSuelo = true;
+        }
+    }
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "Suelo")
+        {
+            enSuelo = false;
+        }
+    }
 
 
 
-        //if (Input.GetKey("w"))
-        //{
-
-        //    tiempoSalto += Time.deltaTime;
-
-        //    tiempoSalto = tiempoSalto % 3f;
-
-        //    transform.position = CalculoTrayectoria(transform.position, tiempoSalto);
-
-        //    transform.position = MathParabola.Parabola(Vector3.zero, Vector3.forward * 3f, 2f, tiempoSalto / 2f);
-        //}
-        //tiempoSalto += Time.deltaTime;
-
-        //tiempoSalto = tiempoSalto % 3f;
-
-        //transform.position = CalculoTrayectoria(transform.position, tiempoSalto);
-
-        
 
 
 
-//    public Vector3 CalculoTrayectoria(Vector3 posicion, float tiempoSalto)
-//    {
-//        posicion = MathParabola.Parabola(transform.position, Vector3.forward * distancia, 1f, tiempoSalto / 2f);
 
-//        distancia += 3f*Time.deltaTime;
 
-//        return posicion;
-//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //if (Input.GetKey("w")) 
+    //{
+    //    controladorSalto.ParabolaRoot = saltoAdelante;
+    //    controladorSalto.FollowParabola();
+
+    //    //direccion = controladorSalto.ParabolaRoot; //ADAPTAR PARA QUE ELIJA UNA DE LAS RUTAS (ATRAS, ADELANTE)
+    //    //controladorSalto.FollowParabola();
+
+    //    //GetComponent<ParabolaController>().FollowParabola();
+    //}
+    //else if (Input.GetKey("s"))
+    //{
+    //    controladorSalto.ParabolaRoot = saltoAtras;
+    //    controladorSalto.FollowParabola();
+    //    //direccion = controladorSalto.ParabolaRoot[1];
+    //}
+
+
+
+    //if (Input.GetKey("w"))
+    //{
+
+    //    tiempoSalto += Time.deltaTime;
+
+    //    tiempoSalto = tiempoSalto % 3f;
+
+    //    transform.position = CalculoTrayectoria(transform.position, tiempoSalto);
+
+    //    transform.position = MathParabola.Parabola(Vector3.zero, Vector3.forward * 3f, 2f, tiempoSalto / 2f);
+    //}
+    //tiempoSalto += Time.deltaTime;
+
+    //tiempoSalto = tiempoSalto % 3f;
+
+    //transform.position = CalculoTrayectoria(transform.position, tiempoSalto);
+
+
+
+
+
+    //    public Vector3 CalculoTrayectoria(Vector3 posicion, float tiempoSalto)
+    //    {
+    //        posicion = MathParabola.Parabola(transform.position, Vector3.forward * distancia, 1f, tiempoSalto / 2f);
+
+    //        distancia += 3f*Time.deltaTime;
+
+    //        return posicion;
+    //    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Player : MonoBehaviour
 {
-    [Header ("MOVIMIENTO")]
+    [Header("MOVIMIENTO")]
     #region Movimiento
     [SerializeField] bool _moverseAdelante;
     public bool moverseAdelante { get { return _moverseAdelante; } set { _moverseAdelante = value; } }
@@ -12,10 +12,10 @@ public abstract class Player : MonoBehaviour
     [SerializeField] bool _moverseAtras;
     public bool moverseAtras { get { return _moverseAtras; } set { _moverseAtras = value; } }
 
-    [SerializeField] bool _moverseDerecha;
+    bool _moverseDerecha;
     public bool moverseDerecha { get { return _moverseDerecha; } set { _moverseDerecha = value; } }
 
-    [SerializeField] bool _moverseIzquierda;
+    bool _moverseIzquierda;
     public bool moverseIzquierda { get { return _moverseIzquierda; } set { _moverseIzquierda = value; } }
 
     [SerializeField] bool _enSuelo;
@@ -33,11 +33,14 @@ public abstract class Player : MonoBehaviour
     [SerializeField] float _tiempoEntreSaltos;
     public float tiempoEntreSaltos { get { return _tiempoEntreSaltos; } set { _tiempoEntreSaltos = value; } }
 
+    [SerializeField] private bool _caminoBloqueado;
+    public bool caminoBloqueado { get { return _caminoBloqueado; } set { _caminoBloqueado = value; } }
+
     public Vector3 distanciaPlataforma;
     public Vector3 posicionPlataforma;
     #endregion
 
-    [Header ("SPAWN")]
+    [Header("SPAWN")]
     #region SPAWN
     [SerializeField] public bool _activarSpawn;
     public bool activarSpawn { get { return _activarSpawn; } set { _activarSpawn = value; } }
@@ -49,9 +52,16 @@ public abstract class Player : MonoBehaviour
     public GameObject cuerpo;
     #endregion
 
-    [Header("PUNTAJE")]
-    public GameObject inventario;
+    [Header("INVENTARIO")]
     public int puntaje;
+    public int cantPolvora;
+    public bool llevaPolvora;
+
+    public bool cercaBarril;
+    public bool cercaCañon;
+
+    [SerializeField] Cañon sptCañon;
+
 
     void Start()
     {
@@ -67,9 +77,10 @@ public abstract class Player : MonoBehaviour
         {
             DireccionMovimiento();
             DesactivarTrampas();
+            ControlesDeInteraccion();
         }
 
-        if(activarSpawn)
+        if (activarSpawn)
         {
             VolverASpawnear();
         }
@@ -85,13 +96,15 @@ public abstract class Player : MonoBehaviour
         }
     }
 
+
+    public abstract void ControlesDeInteraccion();
     public abstract void DireccionMovimiento();
     public abstract void DesactivarTrampas();
 
     public void VolverASpawnear()
     {
         tiempoSpawn -= Time.deltaTime;
-        if( tiempoSpawn <= 0)
+        if (tiempoSpawn <= 0)
         {
             transform.position = new Vector3(-2f, 0, 0);
             cuerpo.SetActive(true);
@@ -152,12 +165,18 @@ public abstract class Player : MonoBehaviour
         }
     }
 
+    public void CargarCañon()
+    {
+        sptCañon.cantPolvora++;
+    }
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Suelo"))
         {
             enSuelo = true;
         }
+
     }
     private void OnCollisionExit(Collision col)
     {
@@ -169,11 +188,83 @@ public abstract class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Oscuridad"))
+        string tipoTag = col.gameObject.tag;
+        switch (tipoTag)
         {
-            activarSpawn = true;
-            cuerpo.SetActive(false);
+            case "Oscuridad":
+                activarSpawn = true;
+                cuerpo.SetActive(false);
+                break;
+
+            case "GranPorton":
+                caminoBloqueado = true;
+                break;
+
+            case "BarrilPolvora":
+                cercaBarril = true;
+                break;
+
+            case "Cañon":
+                cercaCañon = true;
+                sptCañon = col.gameObject.GetComponent<Cañon>();
+                break;
+
+            default:
+                break;
         }
+        //if (col.gameObject.CompareTag("Oscuridad"))
+        //{
+        //    activarSpawn = true;
+        //    cuerpo.SetActive(false);
+        //}
+        //if (col.gameObject.CompareTag("BloqueadorCamino"))
+        //{
+        //    caminoBloqueado = true;
+        //}
+        //if (col.gameObject.CompareTag("BarrilPolvora"))
+        //{
+        //    cercaBarril = true;
+        //}
+        //if (col.gameObject.CompareTag("Cañon"))
+        //{
+        //    cercaCañon = true;
+        //}
     }
-}
+
+    private void OnTriggerExit(Collider col)
+    {
+        string tipoTag = col.gameObject.tag;
+
+        switch (tipoTag)
+        {
+            case "GranPorton":
+                caminoBloqueado = false;
+                break;
+
+            case "BarrilPolvora":
+                cercaBarril = false;
+                break;
+
+            case "Cañon":
+                cercaCañon = false;
+                break;
+
+            default:
+                break;
+        }
+
+        //if (col.gameObject.CompareTag("BloqueadorCamino"))
+        //{
+        //    caminoBloqueado = false;
+        //}
+        //if (col.gameObject.CompareTag("BarrilPolvora"))
+        //{
+        //    cercaBarril = false;
+        //}
+        //if (col.gameObject.CompareTag("Cañon"))
+        //{
+        //    cercaCañon = false;
+        //}
+    }
+} 
 

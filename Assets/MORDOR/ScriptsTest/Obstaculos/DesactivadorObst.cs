@@ -11,8 +11,6 @@ public class DesactivadorObst : MonoBehaviour
     [SerializeField] private bool _desactivado;
     public bool desactivado { get { return _desactivado; } set { _desactivado = value; } }
 
-
-
     private void OnTriggerStay(Collider col)
     {
         if(col.gameObject.CompareTag("Player"))

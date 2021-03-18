@@ -16,6 +16,14 @@ public class JaulaObst : Obstaculo
 
     void FixedUpdate()
     {
-        MovimientoDeJaula();
+        Movimiento();
+    }
+
+    public override void Movimiento()
+    {
+        if (obstActivado)
+            obstaculoRef.transform.localPosition = Vector3.MoveTowards(obstaculoRef.transform.localPosition, posBlequeoObst, velMovimientoObst * Time.deltaTime);
+        else
+            obstaculoRef.transform.localPosition = Vector3.MoveTowards(obstaculoRef.transform.localPosition, posInicialObst, velMovimientoObst * Time.deltaTime);
     }
 }

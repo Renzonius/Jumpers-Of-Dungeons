@@ -8,7 +8,7 @@ public class ControlPlayerDos : Player
     {
         if (!moverseAtras && !moverseAdelante && !sinMovimiento)
         {
-            if (Input.GetKey("i"))
+            if (Input.GetKey("i") && !caminoBloqueado)
             {
                 posicionPlataforma = transform.position + distanciaPlataforma;
                 moverseAdelante = true;
@@ -26,5 +26,22 @@ public class ControlPlayerDos : Player
             usarDesactivador = true;
         else
             usarDesactivador = false;
+    }
+
+    public override void ControlesDeInteraccion()
+    {
+        if (cercaBarril)
+        {
+            if (Input.GetKey("o") && !llevaPolvora)
+                llevaPolvora = true;
+        }
+        else if (cercaCañon)
+        {
+            if (Input.GetKey("o") && llevaPolvora)
+            {
+                llevaPolvora = false;
+                CargarCañon();
+            }
+        }
     }
 }

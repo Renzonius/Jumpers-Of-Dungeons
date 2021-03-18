@@ -57,27 +57,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MORDOR\ScriptsTest\Cofre Item\Cofre_item.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\ActivadorJaula.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Items\HileraItems.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\ActivadorObst.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Camara\MovimientoObjFoco.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Cofre Item\Cofre_animado_item.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\DesactivadorObst.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\ParabolaController.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Camara\MovimientoCamara.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\Proyectil.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Items\Doblon.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\Cañon.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Obstaculo.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\MathParabola.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Players\ControlPlayerUno.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Player2Controller.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\PlataformaFuego\FuegoPlataforma.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Player.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\JaulaObst.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\ObstPared\TrampaPared.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Antorcha\EfectoAntorcha.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\ObstPared\DesactivadorPared.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\PlayerController.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Obstaculo.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\JaulaObst.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\DesactivadorObst.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\ActivadorObst.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Player.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\ControlPlayerUno.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\ControlPlayerDos.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Muro de Fuego\MuroFuego.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Inventario.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Items\NewBehaviourScript.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\ObstPared\DesactivadorPared.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Items\Tesoro.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\MuroObst.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\GranPorton.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Muro de Fuego\MuroFuego.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\PlayerController.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Pendulo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

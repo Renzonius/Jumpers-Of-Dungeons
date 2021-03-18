@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ControlPlayerUno : Player
 {
+    public int puntajeP1;
+    public GameObject coleccionable;
+
+
     public override void DireccionMovimiento()
     {
         if(!moverseAtras && !moverseAdelante && !sinMovimiento)
         {
-            if (Input.GetKey("w"))
+            if (Input.GetKey("w") && !caminoBloqueado)
             {
                 posicionPlataforma = transform.position + distanciaPlataforma;
                 moverseAdelante = true;
@@ -28,4 +32,24 @@ public class ControlPlayerUno : Player
         else
             usarDesactivador = false;
     }
+
+    public override void ControlesDeInteraccion()
+    {
+        if (cercaBarril)
+        {
+            if (Input.GetKey("q") && !llevaPolvora)
+                llevaPolvora = true;
+        }
+        else if (cercaCañon)
+        {
+            if (Input.GetKey("q") && llevaPolvora)
+            {
+                llevaPolvora = false;
+                CargarCañon();
+            }
+                
+        }
+    }
 }
+
+

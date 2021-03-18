@@ -8,6 +8,12 @@ TagManager:
   - Oscuridad
   - Suelo
   - JaulaTrampa
+  - Hilera
+  - MuroFuego
+  - GranPorton
+  - BloqueadorCamino
+  - BarrilPolvora
+  - "Ca\xF1on"
   layers:
   - Default
   - TransparentFX
@@ -19,7 +25,7 @@ TagManager:
   - 
   - Players
   - Escenario
-  - 
+  - Tesoro
   - 
   - 
   - 

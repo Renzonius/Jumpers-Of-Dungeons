@@ -5,7 +5,6 @@ using UnityEngine;
 public class ActivadorObst : MonoBehaviour
 {
     public Obstaculo sptObstaculo;
-    public DesactivadorObst sptDesactivador;
     public ControlPlayerUno sptPlayer;
     public ControlPlayerDos sptPlayerDos;
 
@@ -32,24 +31,6 @@ public class ActivadorObst : MonoBehaviour
             activado = false;
         }
     }
-
-    //private void OnTriggerEnter(Collider col)
-    //{
-    //    if (col.gameObject.CompareTag("Player"))
-    //    {
-    //        sptObstaculo.obstActivado = true;
-    //        activado = true;
-
-    //        if (col.gameObject.name == "Player")
-    //        {
-    //            sptPlayer.sinMovimiento = true;
-    //        }
-    //        else if (col.gameObject.name == "Player2")
-    //        {
-    //            sptPlayerDos.sinMovimiento = true;
-    //        }
-    //    }
-    //}
 
     private void OnTriggerEnter(Collider col)
     {

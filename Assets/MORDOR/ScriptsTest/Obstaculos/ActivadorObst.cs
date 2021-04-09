@@ -17,6 +17,8 @@ public class ActivadorObst : MonoBehaviour
     private void Start()
     {
         tiempoActivo = 0.5f;
+        sptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<ControlPlayerUno>();
+        sptPlayerDos = GameObject.FindGameObjectWithTag("Player2").GetComponent<ControlPlayerDos>();
     }
 
     private void FixedUpdate()

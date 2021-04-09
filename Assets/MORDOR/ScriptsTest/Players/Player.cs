@@ -38,29 +38,54 @@ public abstract class Player : MonoBehaviour
 
     public Vector3 distanciaPlataforma;
     public Vector3 posicionPlataforma;
+
+    [SerializeField] private bool _derrota;
+    public bool derrota { get { return _derrota; } set { _derrota = value; } }
+
+    [SerializeField] private bool _victoria;
+    public bool victoria { get { return _victoria; } set { _victoria = value; } }
     #endregion
 
     [Header("SPAWN")]
     #region SPAWN
-    [SerializeField] public bool _activarSpawn;
+    [SerializeField]  bool _activarSpawn;
     public bool activarSpawn { get { return _activarSpawn; } set { _activarSpawn = value; } }
-    [SerializeField] public float _tiempoSpawn;
+    [SerializeField]  float _tiempoSpawn;
     public float tiempoSpawn { get { return _tiempoSpawn; } set { _tiempoSpawn = value; } }
-    [SerializeField] public Vector3 _puntoSpawn;
+    [SerializeField]  Vector3 _puntoSpawn;
     public Vector3 puntoSpawn { get { return _puntoSpawn; } set { _puntoSpawn = value; } }
+
+    [SerializeField] bool _aplastado;
+    public bool aplastado { get { return _aplastado; } set { _aplastado = value; } }
+
+    Vector3 escala;
+    Vector3 escalaNormal;
+
+    [SerializeField] float _tiempoAplastado;
+    public float tiempoAplastado { get { return _tiempoAplastado; } set { _tiempoAplastado = value; } }
+
 
     public GameObject cuerpo;
     #endregion
 
     [Header("INVENTARIO")]
-    public int puntaje;
-    public int cantPolvora;
-    public bool llevaPolvora;
+    #region Inventario
+    [SerializeField] private int _puntaje;
+    public int puntaje { get { return _puntaje; } set { _puntaje = value; } }
 
-    public bool cercaBarril;
-    public bool cercaCañon;
+    [SerializeField] private bool _llevaPolvora;
+    public bool llevaPolvora { get { return _llevaPolvora; } set { _llevaPolvora = value; } }
+
+    [SerializeField] private bool _cercaBarril;
+    public bool cercaBarril { get { return _cercaBarril; } set { _cercaBarril = value; } }
+
+    [SerializeField] private bool _cercaCañon;
+    public bool cercaCañon { get { return _cercaCañon; } set { _cercaCañon = value; } }
 
     [SerializeField] Cañon sptCañon;
+
+    #endregion
+
 
 
     void Start()
@@ -69,37 +94,17 @@ public abstract class Player : MonoBehaviour
         tiempoEntreSaltos = 0.5f;
         distanciaPlataforma = new Vector3(0, 0, 5f);
         tiempoSpawn = 3f;
+        tiempoAplastado = 3f;
+        escalaNormal = transform.localScale;
     }
 
-    private void FixedUpdate()
-    {
-        if (enSuelo)
-        {
-            DireccionMovimiento();
-            DesactivarTrampas();
-            ControlesDeInteraccion();
-        }
-
-        if (activarSpawn)
-        {
-            VolverASpawnear();
-        }
-
-        if (moverseAdelante)
-        {
-            MovimientoAdelante();
-
-        }
-        else if (moverseAtras)
-        {
-            MovimientoAtras();
-        }
-    }
+    
 
 
     public abstract void ControlesDeInteraccion();
     public abstract void DireccionMovimiento();
     public abstract void DesactivarTrampas();
+
 
     public void VolverASpawnear()
     {
@@ -112,7 +117,6 @@ public abstract class Player : MonoBehaviour
             activarSpawn = false;
             transform.position = puntoSpawn;
         }
-
     }
 
     public void MovimientoAdelante()
@@ -148,7 +152,6 @@ public abstract class Player : MonoBehaviour
         {
             tiempoEntreSaltos = 0.5f;
             moverseDerecha = false;
-            //posicionPlataforma.z += distanciaSalto;
         }
     }
 
@@ -161,7 +164,6 @@ public abstract class Player : MonoBehaviour
         {
             tiempoEntreSaltos = 0.5f;
             moverseIzquierda = false;
-            //distanciaPlataforma.z -= distanciaSalto;
         }
     }
 
@@ -169,10 +171,38 @@ public abstract class Player : MonoBehaviour
     {
         sptCañon.cantPolvora++;
     }
+    public void SumarPuntaje(int puntajeItem)
+    {
+        puntaje += puntajeItem;
+    }
+    public int PerderPuntaje(int puntaje)
+    {
+        puntaje = puntaje / 2;
+        return puntaje;
+    }
+
+    public void Aplastamiento()
+    {
+        escala = transform.localScale;
+        escala.y = escala.y / 2;
+        transform.localScale = escala;
+    }
+    public void Estirar()
+    {
+        tiempoAplastado -= Time.deltaTime;
+        if(tiempoAplastado <= 0f)
+        {
+            transform.localScale = escalaNormal;
+            aplastado = false;
+            tiempoAplastado = 3f;
+            sinMovimiento = false;
+        }
+
+    }
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Suelo"))
+        if (col.gameObject.CompareTag("Suelo") || col.gameObject.CompareTag("SueloTrampa"))
         {
             enSuelo = true;
         }
@@ -193,6 +223,8 @@ public abstract class Player : MonoBehaviour
         {
             case "Oscuridad":
                 activarSpawn = true;
+                puntaje = PerderPuntaje(puntaje);
+                Debug.Log(puntaje);
                 cuerpo.SetActive(false);
                 break;
 
@@ -209,26 +241,15 @@ public abstract class Player : MonoBehaviour
                 sptCañon = col.gameObject.GetComponent<Cañon>();
                 break;
 
+            case "Prensadora":
+                aplastado = true;
+                Aplastamiento();
+                sinMovimiento = true;
+                break;
+
             default:
                 break;
         }
-        //if (col.gameObject.CompareTag("Oscuridad"))
-        //{
-        //    activarSpawn = true;
-        //    cuerpo.SetActive(false);
-        //}
-        //if (col.gameObject.CompareTag("BloqueadorCamino"))
-        //{
-        //    caminoBloqueado = true;
-        //}
-        //if (col.gameObject.CompareTag("BarrilPolvora"))
-        //{
-        //    cercaBarril = true;
-        //}
-        //if (col.gameObject.CompareTag("Cañon"))
-        //{
-        //    cercaCañon = true;
-        //}
     }
 
     private void OnTriggerExit(Collider col)
@@ -252,19 +273,6 @@ public abstract class Player : MonoBehaviour
             default:
                 break;
         }
-
-        //if (col.gameObject.CompareTag("BloqueadorCamino"))
-        //{
-        //    caminoBloqueado = false;
-        //}
-        //if (col.gameObject.CompareTag("BarrilPolvora"))
-        //{
-        //    cercaBarril = false;
-        //}
-        //if (col.gameObject.CompareTag("Cañon"))
-        //{
-        //    cercaCañon = false;
-        //}
     }
 } 
 

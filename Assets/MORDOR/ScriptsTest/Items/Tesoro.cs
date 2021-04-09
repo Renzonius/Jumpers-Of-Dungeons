@@ -6,15 +6,14 @@ public abstract class Tesoro : MonoBehaviour
 {
     //public GameObject itemRef;
     public int puntajeItem;
-    public ControlPlayerUno sptPlayer1;
-    public ControlPlayerDos sptPlayer2;
+    public ControlPlayerUno sptPlayerUno;
+    public GameObject playerUnoRef;
+    public ControlPlayerDos sptPlayerDos;
+    public GameObject playerDosRef;
     public float velMovimiento;
     public bool movimientoLocal;
 
-    void Start()
-    {
-        
-    }
+
 
     void FixedUpdate()
     {
@@ -23,17 +22,31 @@ public abstract class Tesoro : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        string tipoTag = col.gameObject.tag;
+        switch (tipoTag)
         {
-            sptPlayer1.puntaje += puntajeItem;
-            Destroy(gameObject);
-        }
-        else if (col.gameObject.CompareTag("Player2"))
-        {
-            sptPlayer2.puntaje += puntajeItem;
-            Destroy(gameObject);
+            case "Player":
+                sptPlayerUno.puntaje += puntajeItem;
+                Destroy(gameObject);
+                break;
+            case "Player2":
+                sptPlayerDos.puntaje += puntajeItem;
+                Destroy(gameObject);
+                break;
+            default:
+                break;
         }
     }
 
     public abstract void Movimiento();
+
+    public Vector3 AtraerItem(Transform tranformItem, GameObject player)
+    {
+        Vector3 posicionItem;
+        Vector3 posicionPlayer;
+        posicionItem = tranformItem.position;
+        posicionPlayer = player.transform.position;
+        posicionItem = Vector3.MoveTowards(posicionItem, posicionPlayer, 20f * Time.deltaTime);
+        return posicionItem;
+    }
 }

@@ -4,8 +4,35 @@ using UnityEngine;
 
 public class ControlPlayerUno : Player
 {
-    public int puntajeP1;
-    public GameObject coleccionable;
+    public int puntajePlayerUno;
+
+    private void FixedUpdate()
+    {
+        if (enSuelo)
+        {
+            DireccionMovimiento();
+            DesactivarTrampas();
+            ControlesDeInteraccion();
+        }
+
+        if (activarSpawn)
+        {
+            VolverASpawnear();
+        }
+        if (aplastado)
+        {
+            Estirar();
+        }
+        if (moverseAdelante)
+        {
+            MovimientoAdelante();
+        }
+        else if (moverseAtras)
+        {
+            MovimientoAtras();
+        }
+    }
+
 
 
     public override void DireccionMovimiento()

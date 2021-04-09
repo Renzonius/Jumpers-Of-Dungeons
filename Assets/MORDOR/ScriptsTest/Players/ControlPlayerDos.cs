@@ -4,6 +4,39 @@ using UnityEngine;
 
 public class ControlPlayerDos : Player
 {
+    public int puntajePlayerDos;
+    
+
+    private void FixedUpdate()
+    {
+        if (enSuelo)
+        {
+            DireccionMovimiento();
+            DesactivarTrampas();
+            ControlesDeInteraccion();
+        }
+
+        if (activarSpawn)
+        {
+            VolverASpawnear();
+        }
+        if (aplastado)
+        {
+            Estirar();
+        }
+
+        if (moverseAdelante)
+        {
+            MovimientoAdelante();
+
+        }
+        else if (moverseAtras)
+        {
+            MovimientoAtras();
+        }
+    }
+
+
     public override void DireccionMovimiento()
     {
         if (!moverseAtras && !moverseAdelante && !sinMovimiento)

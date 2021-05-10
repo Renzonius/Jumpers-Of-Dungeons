@@ -38,12 +38,22 @@ public abstract class Player : MonoBehaviour
 
     public Vector3 distanciaPlataforma;
     public Vector3 posicionPlataforma;
+    public Quaternion mirarAdelante;
+    public Quaternion mirarAtras;
 
     [SerializeField] private bool _derrota;
     public bool derrota { get { return _derrota; } set { _derrota = value; } }
 
     [SerializeField] private bool _victoria;
     public bool victoria { get { return _victoria; } set { _victoria = value; } }
+
+    public bool jugadorCortado;
+    public MathParabola caidaDañado;
+
+    public Vector3 coorInicio;
+    public Vector3 coorFinal;
+    float tiempoVuelo;
+    public ParabolaController parabola;
     #endregion
 
     [Header("SPAWN")]
@@ -87,15 +97,31 @@ public abstract class Player : MonoBehaviour
     #endregion
 
 
+    [Header("GRAN SALON")]
+
+    protected Rigidbody rigiRef;
+    public bool corriendo;
+    public float velocidadCorrer;
+    public bool sigiloso;
+    public float velocidadSigilo;
+    public Vector3 posicion;
+
+
+
 
     void Start()
     {
+        parabola = GetComponent<ParabolaController>();
         velocidadMovimiento = 20f;
         tiempoEntreSaltos = 0.5f;
         distanciaPlataforma = new Vector3(0, 0, 5f);
         tiempoSpawn = 3f;
         tiempoAplastado = 3f;
         escalaNormal = transform.localScale;
+        mirarAdelante = transform.rotation;
+
+        posicion = transform.position;
+        rigiRef = GetComponent<Rigidbody>();
     }
 
     
@@ -116,20 +142,43 @@ public abstract class Player : MonoBehaviour
             tiempoSpawn = 3f;
             activarSpawn = false;
             transform.position = puntoSpawn;
+            sinMovimiento = false;
+
         }
     }
 
     public void MovimientoAdelante()
     {
-        transform.position = Vector3.MoveTowards(transform.position, posicionPlataforma, velocidadMovimiento * Time.deltaTime);
-        tiempoEntreSaltos -= Time.deltaTime;
+        if (!jugadorCortado)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, posicionPlataforma, velocidadMovimiento * Time.deltaTime);
+            tiempoEntreSaltos -= Time.deltaTime;
+        }
 
         if (transform.position == posicionPlataforma && tiempoEntreSaltos <= 0)
         {
             tiempoEntreSaltos = 0.5f;
             moverseAdelante = false;
         }
+        if (transform.rotation == mirarAtras)
+        {
+            transform.Rotate(0, 180, 0);
+            mirarAdelante = transform.rotation;
+        }
     }
+
+    public void MovimientoCorrer()
+    {
+        posicion -= new Vector3(0f, 0f, velocidadCorrer * Time.deltaTime);
+        transform.position = posicion;
+    }
+
+    public void MovimientoSigiloso()
+    {
+        posicion -= new Vector3(0f, 0f, velocidadSigilo * Time.deltaTime);
+        transform.position = posicion;
+    }
+
 
     public void MovimientoAtras()
     {
@@ -141,6 +190,12 @@ public abstract class Player : MonoBehaviour
             tiempoEntreSaltos = 0.5f;
             moverseAtras = false;
         }
+        if(transform.rotation == mirarAdelante)
+        {
+            transform.Rotate(0, 180, 0);
+            mirarAtras = transform.rotation;
+        }
+        
     }
 
     public void MovimientoDerecha()
@@ -184,7 +239,7 @@ public abstract class Player : MonoBehaviour
     public void Aplastamiento()
     {
         escala = transform.localScale;
-        escala.y = escala.y / 2;
+        escala.y = 0.5f;
         transform.localScale = escala;
     }
     public void Estirar()
@@ -200,22 +255,20 @@ public abstract class Player : MonoBehaviour
 
     }
 
+    public void cortePendulo()
+    {
+        parabola.FollowParabola();
+        jugadorCortado = false;
+    }
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Suelo") || col.gameObject.CompareTag("SueloTrampa"))
         {
             enSuelo = true;
         }
+    }
 
-    }
-    private void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.CompareTag("Suelo"))
-        {
-            enSuelo = false;
-            puntoSpawn = col.gameObject.transform.position;
-        }
-    }
     private void OnTriggerEnter(Collider col)
     {
         string tipoTag = col.gameObject.tag;
@@ -226,6 +279,7 @@ public abstract class Player : MonoBehaviour
                 puntaje = PerderPuntaje(puntaje);
                 Debug.Log(puntaje);
                 cuerpo.SetActive(false);
+                jugadorCortado = false;
                 break;
 
             case "GranPorton":
@@ -244,9 +298,28 @@ public abstract class Player : MonoBehaviour
             case "Prensadora":
                 aplastado = true;
                 Aplastamiento();
+                puntaje = PerderPuntaje(puntaje);
                 sinMovimiento = true;
                 break;
 
+            case "Parabola":
+                parabola.ParabolaRoot = col.gameObject;
+                break;
+
+            case "Pendulo":
+                parabola.generarRuta = true;
+                jugadorCortado = true;
+                sinMovimiento = true;
+                break;
+
+            case "Marca":
+                corriendo = false;
+                sigiloso = true;
+                break;
+
+            case "MarcaDragon":
+                sigiloso = false;
+                break;
             default:
                 break;
         }

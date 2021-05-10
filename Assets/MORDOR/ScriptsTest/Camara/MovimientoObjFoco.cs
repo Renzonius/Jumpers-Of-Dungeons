@@ -21,8 +21,8 @@ public class MovimientoObjFoco : MonoBehaviour
     void FixedUpdate()
     {
         posFoco.z = player1.transform.position.z/2 + player2.transform.position.z/2;
+        posFoco.x = player1.transform.position.x / 2 + player2.transform.position.x / 2;
         posFoco = Vector3.Lerp(transform.position, posFoco, velocidadSmooth);
-
         transform.position = posFoco ;
     }
 }

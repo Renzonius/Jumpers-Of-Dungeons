@@ -5,7 +5,9 @@ using UnityEngine;
 public class ControlPlayerDos : Player
 {
     public int puntajePlayerDos;
-    
+
+    public Animator animator_backu;
+
 
     private void FixedUpdate()
     {
@@ -19,23 +21,53 @@ public class ControlPlayerDos : Player
         if (activarSpawn)
         {
             VolverASpawnear();
+            animator_backu.SetBool("danno_backu", false);
         }
+
+        if (jugadorCortado)
+        {
+            cortePendulo();
+            animator_backu.SetBool("danno_backu", true);
+        }
+
+
         if (aplastado)
         {
+            Aplastamiento();
             Estirar();
         }
+
 
         if (moverseAdelante)
         {
             MovimientoAdelante();
-
         }
         else if (moverseAtras)
         {
             MovimientoAtras();
         }
-    }
 
+        if(corriendo)
+        {
+            rigiRef.useGravity = false;
+            MovimientoCorrer();
+            animator_backu.SetBool("correr_backu", true);
+        }
+        else
+            animator_backu.SetBool("correr_backu", false);
+
+        if (sigiloso)
+        {
+            rigiRef.useGravity = false;
+            MovimientoSigiloso();
+            animator_backu.SetBool("sigilo_backu", true);
+        }
+        else
+        {
+            animator_backu.SetBool("sigilo_backu", false);
+        }
+
+    }
 
     public override void DireccionMovimiento()
     {
@@ -45,11 +77,13 @@ public class ControlPlayerDos : Player
             {
                 posicionPlataforma = transform.position + distanciaPlataforma;
                 moverseAdelante = true;
+                animator_backu.SetBool("dash_backu", true);
             }
             else if (Input.GetKey("k"))
             {
                 posicionPlataforma = transform.position - distanciaPlataforma;
                 moverseAtras = true;
+                animator_backu.SetBool("dash_backu", true);
             }
         }
     }
@@ -75,6 +109,15 @@ public class ControlPlayerDos : Player
                 llevaPolvora = false;
                 CargarCañon();
             }
+        }
+    }
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.CompareTag("Suelo"))
+        {
+            enSuelo = false;
+            puntoSpawn = col.gameObject.transform.position;
+            animator_backu.SetBool("dash_backu", false);
         }
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4275976122093333678}
   - component: {fileID: 4275976122093333679}
   - component: {fileID: 4275976122093333649}
+  - component: {fileID: 319874558}
   m_Layer: 8
   m_Name: Player2
   m_TagString: Player2
@@ -44,10 +45,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.2393536
+  m_Height: 1.4368966
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.010425985, y: 0.8446549, z: 0}
 --- !u!54 &4275976122093333679
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -86,6 +87,8 @@ MonoBehaviour:
   _caminoBloqueado: 0
   distanciaPlataforma: {x: 0, y: 0, z: 0}
   posicionPlataforma: {x: 0, y: 0, z: 0}
+  mirarAdelante: {x: 0, y: 0, z: 0, w: 0}
+  mirarAtras: {x: 0, y: 0, z: 0, w: 0}
   _derrota: 0
   _victoria: 0
   _activarSpawn: 0
@@ -100,6 +103,26 @@ MonoBehaviour:
   "_cercaCa\xF1on": 0
   "sptCa\xF1on": {fileID: 0}
   puntajePlayerDos: 0
+  animator_backu: {fileID: 319874558}
+--- !u!95 &319874558
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4275976122093333674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ff1f775ad8b16c94cbd754b4e6e26197, type: 3}
+  m_Controller: {fileID: 9100000, guid: 010c612fee8a27c47929526d98d6a8bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5816391918257350856
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,6 +16,10 @@ TagManager:
   - "Ca\xF1on"
   - Prensadora
   - SueloTrampa
+  - Pendulo
+  - Parabola
+  - Marca
+  - MarcaDragon
   layers:
   - Default
   - TransparentFX

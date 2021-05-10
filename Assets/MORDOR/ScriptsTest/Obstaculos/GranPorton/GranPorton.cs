@@ -10,6 +10,12 @@ public class GranPorton : MonoBehaviour
     public ControlPlayerUno sptPlayer1;
     public ControlPlayerDos sptPlayer2;
 
+    public GameObject puertaRotaDerRef;
+    public GameObject puertaRotaIzqRef;
+
+    public GameObject puertaDerRef;
+    public GameObject puertaIzqRef;
+
     public GameObject BarrilPolvoraIzqRef;
     public GameObject BarrilPolvoraDerRef;
 
@@ -29,8 +35,13 @@ public class GranPorton : MonoBehaviour
     {
         if (portonDestruido)
         {
+            
             anim.Play("AbrirGranPorton");
             colliderRef.enabled = false;
+            puertaDerRef.SetActive(false);
+            puertaIzqRef.SetActive(false);
+            puertaRotaDerRef.SetActive(true);
+            puertaRotaIzqRef.SetActive(true);
             sptPlayer1.caminoBloqueado = false;
             sptPlayer2.caminoBloqueado = false;
             BarrilPolvoraIzqRef.SetActive(false);

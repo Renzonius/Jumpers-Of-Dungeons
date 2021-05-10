@@ -9,6 +9,7 @@ public class Pendulo : MonoBehaviour
     public float velocidad;
     public int fase;
 
+
     void FixedUpdate()
     {
         MovimientoPendulo();

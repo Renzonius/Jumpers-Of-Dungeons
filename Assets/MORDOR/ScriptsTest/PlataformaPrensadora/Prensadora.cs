@@ -30,35 +30,6 @@ public class Prensadora : MonoBehaviour
         Movimiento();
     }
 
-    //public void Movimiento()
-    //{
-    //    if (!aplastoJugador) 
-    //    {
-    //        if (!desactivada)
-    //        {
-    //            posPrensa = Vector3.MoveTowards(posPrensa, posFinal, velMovimientoBajada * Time.deltaTime);
-    //            transform.localPosition = posPrensa;
-    //            if (posPrensa == posFinal)
-    //                desactivada = true;
-    //        }
-    //        else
-    //        {
-    //            tiempoEspera -= Time.deltaTime;
-    //            if (tiempoEspera <= 0)
-    //            {
-    //                posPrensa = Vector3.MoveTowards(posPrensa, posInicial, velMovimientoSubida * Time.deltaTime);
-    //                transform.localPosition = posPrensa;
-    //                if (posPrensa == posInicial && !aplastoJugador)
-    //                {
-    //                    desactivada = false;
-    //                    tiempoEspera = 2f;
-    //                }
-    //            }
-    //        }
-    //    }
-
-    //}
-
     public void Movimiento()
     {
         if (!desactivada)
@@ -108,7 +79,7 @@ public class Prensadora : MonoBehaviour
                 if (tiempoEspera <= 0)
                 {
                     realizarReccorrido = false;
-                    tiempoEspera = 2f;
+                    tiempoEspera = 1f;
                 }
             }
         }

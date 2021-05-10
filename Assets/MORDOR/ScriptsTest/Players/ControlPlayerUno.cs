@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlPlayerUno : Player
 {
     public int puntajePlayerUno;
+    public Animator animator_tuxxi;
 
     private void FixedUpdate()
     {
@@ -18,11 +19,21 @@ public class ControlPlayerUno : Player
         if (activarSpawn)
         {
             VolverASpawnear();
+            animator_tuxxi.SetBool("pendulo_tuxxi", false);
         }
+        
         if (aplastado)
         {
+            Aplastamiento();
             Estirar();
         }
+
+        if (jugadorCortado)
+        {
+            cortePendulo();
+            animator_tuxxi.SetBool("pendulo_tuxxi", true);
+        }
+
         if (moverseAdelante)
         {
             MovimientoAdelante();
@@ -31,9 +42,27 @@ public class ControlPlayerUno : Player
         {
             MovimientoAtras();
         }
+
+        if(corriendo)
+        {
+            rigiRef.useGravity = false;
+            MovimientoCorrer();
+            animator_tuxxi.SetBool("correr_tuxxi", true);
+        }
+        else
+            animator_tuxxi.SetBool("correr_tuxxi", false);
+
+        if (sigiloso)
+        {
+            rigiRef.useGravity = false;
+            MovimientoSigiloso();
+            animator_tuxxi.SetBool("sigilo_tuxxi", true);
+        }
+        else
+            animator_tuxxi.SetBool("sigilo_tuxxi", false);
+        
+
     }
-
-
 
     public override void DireccionMovimiento()
     {
@@ -43,11 +72,13 @@ public class ControlPlayerUno : Player
             {
                 posicionPlataforma = transform.position + distanciaPlataforma;
                 moverseAdelante = true;
+                animator_tuxxi.SetBool("dash_tuxxi", true);
             }
             else if (Input.GetKey("s"))
             {
                 posicionPlataforma = transform.position - distanciaPlataforma;
                 moverseAtras = true;
+                animator_tuxxi.SetBool("dash_tuxxi", true);
             }
         }
     }
@@ -75,6 +106,16 @@ public class ControlPlayerUno : Player
                 CargarCañon();
             }
                 
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.CompareTag("Suelo"))
+        {
+            enSuelo = false;
+            puntoSpawn = col.gameObject.transform.position;
+            animator_tuxxi.SetBool("dash_tuxxi", false);
         }
     }
 }

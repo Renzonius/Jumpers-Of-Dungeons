@@ -48,11 +48,11 @@ public abstract class Player : MonoBehaviour
     public bool victoria { get { return _victoria; } set { _victoria = value; } }
 
     public bool jugadorCortado;
-    public MathParabola caidaDañado;
+    //public MathParabola caidaDañado;
 
-    public Vector3 coorInicio;
-    public Vector3 coorFinal;
-    float tiempoVuelo;
+    //public Vector3 coorInicio;
+    //public Vector3 coorFinal;
+    //float tiempoVuelo;
     public ParabolaController parabola;
     #endregion
 
@@ -166,20 +166,6 @@ public abstract class Player : MonoBehaviour
             mirarAdelante = transform.rotation;
         }
     }
-
-    public void MovimientoCorrer()
-    {
-        posicion -= new Vector3(0f, 0f, velocidadCorrer * Time.deltaTime);
-        transform.position = posicion;
-    }
-
-    public void MovimientoSigiloso()
-    {
-        posicion -= new Vector3(0f, 0f, velocidadSigilo * Time.deltaTime);
-        transform.position = posicion;
-    }
-
-
     public void MovimientoAtras()
     {
         transform.position = Vector3.MoveTowards(transform.position, posicionPlataforma, velocidadMovimiento * Time.deltaTime);
@@ -197,6 +183,20 @@ public abstract class Player : MonoBehaviour
         }
         
     }
+
+    public void MovimientoCorrer()
+    {
+        posicion -= new Vector3(0f, 0f, velocidadCorrer * Time.deltaTime);
+        transform.position = posicion;
+    }
+
+    public void MovimientoSigiloso()
+    {
+        posicion -= new Vector3(0f, 0f, velocidadSigilo * Time.deltaTime);
+        transform.position = posicion;
+    }
+
+
 
     public void MovimientoDerecha()
     {
@@ -252,7 +252,6 @@ public abstract class Player : MonoBehaviour
             tiempoAplastado = 3f;
             sinMovimiento = false;
         }
-
     }
 
     public void cortePendulo()
@@ -347,5 +346,5 @@ public abstract class Player : MonoBehaviour
                 break;
         }
     }
-} 
+}   
 

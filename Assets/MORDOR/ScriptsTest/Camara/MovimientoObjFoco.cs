@@ -22,7 +22,7 @@ public class MovimientoObjFoco : MonoBehaviour
     {
         posFoco.z = player1.transform.position.z/2 + player2.transform.position.z/2;
         posFoco.x = player1.transform.position.x / 2 + player2.transform.position.x / 2;
-        posFoco = Vector3.Lerp(transform.position, posFoco, velocidadSmooth);
+        posFoco = Vector3.Lerp(transform.position, posFoco, velocidadSmooth * Time.deltaTime) ;
         transform.position = posFoco ;
     }
 }

@@ -12,17 +12,29 @@ public class Prensadora : MonoBehaviour
     public float velMovimientoBajada;
     public float velMovimientoSubida;
     public float tiempoEspera;
-    public ControlPlayerUno sptPlayerUno;
-    public ControlPlayerDos sptPlayerDos;
+    public PrensaInteraccion sptPlayerUno;
+    public PrensaInteraccion sptPlayerDos;
     public bool aplastoJugador;
 
     public bool realizarReccorrido;
 
+    public Animator animator;
+
+    public ParticleSystem humoParticulas;
+    public ParticleSystem quebradura;
+    public ParticleSystem tierra;
+    public bool particulasEmitidas;
+
+
     void Start()
     {
-        sptPlayerUno = GameObject.FindGameObjectWithTag("Player").GetComponent<ControlPlayerUno>();
-        sptPlayerDos = GameObject.FindGameObjectWithTag("Player2").GetComponent<ControlPlayerDos>();
+        sptPlayerUno = GameObject.FindGameObjectWithTag("Player").GetComponent<PrensaInteraccion>();
+        sptPlayerDos = GameObject.FindGameObjectWithTag("Player2").GetComponent<PrensaInteraccion>();
         posPrensa = transform.localPosition;
+        animator = GetComponent<Animator>();
+
+        quebradura = transform.parent.GetChild(1).gameObject.GetComponent<ParticleSystem>();
+        humoParticulas = transform.parent.GetChild(2).gameObject.GetComponent<ParticleSystem>();
     }
 
     void FixedUpdate()
@@ -56,13 +68,19 @@ public class Prensadora : MonoBehaviour
                 realizarReccorrido = true;
                 tiempoEspera = 2f;
             }
-
         }
         else
         {
             posPrensa = Vector3.MoveTowards(posPrensa, posFinal, velMovimientoBajada * Time.deltaTime);
             transform.localPosition = posPrensa;
+            if (transform.localPosition == posFinal && !particulasEmitidas)
+            {
+                quebradura.Play();
+                humoParticulas.Play();
+                particulasEmitidas = true;
+            }
         }
+            animator.SetBool("efecto", true);
     }
 
     public void SubePrensa()
@@ -88,6 +106,8 @@ public class Prensadora : MonoBehaviour
             posPrensa = Vector3.MoveTowards(posPrensa, posInicial, velMovimientoSubida * Time.deltaTime);
             transform.localPosition = posPrensa;
         }
+        animator.SetBool("efecto", false);
+        particulasEmitidas = false;
     }
 
     private void OnTriggerEnter(Collider col)

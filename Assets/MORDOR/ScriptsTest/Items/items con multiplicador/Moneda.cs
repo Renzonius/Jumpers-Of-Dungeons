@@ -15,10 +15,10 @@ public class Moneda : MonoBehaviour
     {
         puntajeItem = 3;
         velMovimiento = 5;
-        playerUnoRef = GameObject.FindGameObjectWithTag("Player");
-        sptPlayerUno = playerUnoRef.GetComponent<ControlPlayerUno>();
-        playerDosRef = GameObject.FindGameObjectWithTag("Player2");
-        sptPlayerDos = playerDosRef.GetComponent<ControlPlayerDos>();
+        //playerUnoRef = GameObject.FindGameObjectWithTag("Player");
+        //sptPlayerUno = playerUnoRef.GetComponent<ControlPlayerUno>();
+        //playerDosRef = GameObject.FindGameObjectWithTag("Player2");
+        //sptPlayerDos = playerDosRef.GetComponent<ControlPlayerDos>();
     }
 
     void FixedUpdate()
@@ -37,11 +37,11 @@ public class Moneda : MonoBehaviour
         switch (tipoTag)
         {
             case "Player":
-                sptPlayerUno.SumarPuntaje(puntajeItem);
+                //sptPlayerUno.SumarPuntaje(puntajeItem);
                 Destroy(gameObject);
                 break;
             case "Player2":
-                sptPlayerDos.SumarPuntaje(puntajeItem);
+                //sptPlayerDos.SumarPuntaje(puntajeItem);
                 Destroy(gameObject);
                 break;
             default:

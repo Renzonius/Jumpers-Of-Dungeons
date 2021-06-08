@@ -42,6 +42,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3948845623123017444}
     m_Modifications:
+    - target: {fileID: 1396659859823202075, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659859846542331, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860379065095, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860559056748, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
     - target: {fileID: 1396659860808221486, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -104,6 +120,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3948845623123017444}
     m_Modifications:
+    - target: {fileID: 1396659859823202075, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659859846542331, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860379065095, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860559056748, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
     - target: {fileID: 1396659860808221486, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -166,6 +198,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3948845623123017444}
     m_Modifications:
+    - target: {fileID: 1396659859823202075, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659859846542331, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860379065095, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860559056748, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
     - target: {fileID: 1396659860808221486, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -228,6 +276,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3948845623123017444}
     m_Modifications:
+    - target: {fileID: 1396659859823202075, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659859846542331, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860379065095, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860559056748, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
     - target: {fileID: 1396659860808221486, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -290,6 +354,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3948845623123017444}
     m_Modifications:
+    - target: {fileID: 1396659859823202075, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659859846542331, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860379065095, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396659860559056748, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
+      propertyPath: m_TagString
+      value: Moneda
+      objectReference: {fileID: 0}
     - target: {fileID: 1396659860808221486, guid: 7fd5e2628b8242447954b4898cc6ce08, type: 3}
       propertyPath: m_RootOrder
       value: 1

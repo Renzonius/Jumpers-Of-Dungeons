@@ -4,22 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Player2
-  - Oscuridad
-  - Suelo
   - JaulaTrampa
-  - Hilera
-  - MuroFuego
+  - Player2
+  - Suelo
+  - SueloTrampa
+  - Desactivador
+  - Oscuridad
+  - Pendulo
+  - Parabola
   - GranPorton
-  - BloqueadorCamino
   - BarrilPolvora
   - "Ca\xF1on"
   - Prensadora
-  - SueloTrampa
-  - Pendulo
-  - Parabola
-  - Marca
-  - MarcaDragon
+  - Moneda
+  - BolaFuego
   layers:
   - Default
   - TransparentFX
@@ -29,9 +27,9 @@ TagManager:
   - UI
   - 
   - 
-  - Players
-  - Escenario
-  - Tesoro
+  - 
+  - 
+  - 
   - 
   - 
   - 

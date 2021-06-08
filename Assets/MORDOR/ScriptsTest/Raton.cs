@@ -17,7 +17,8 @@ public class Raton : MonoBehaviour
     public int valorMaxPos;
     public bool enPosicion;
     int valor;
-    
+
+    Animator animator;
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class Raton : MonoBehaviour
         posB = posBRef.transform.localPosition;
         posA = posARef.transform.localPosition;
         posActual = ratonRef.transform.localPosition;
+
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -43,6 +46,7 @@ public class Raton : MonoBehaviour
             if (posActual == posiciones[0] || posActual == posiciones[1] || posActual == posiciones[2])
             {
                 enPosicion = true;
+                animator.SetBool("correr", false);
                 if (posActual == posiciones[2])
                 {
                     tiempoEspera = 5;
@@ -56,6 +60,7 @@ public class Raton : MonoBehaviour
             {
                 tiempoEspera = valorTiempo;
                 enPosicion = false;
+                animator.SetBool("correr", true);
                 if (valor >= valorMaxPos)
                 {
                     valor = 0;

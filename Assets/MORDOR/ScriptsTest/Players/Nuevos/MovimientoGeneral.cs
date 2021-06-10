@@ -26,7 +26,7 @@ public class MovimientoGeneral : MonoBehaviour, IMovimiento
     public Vector3 distanciaPlataforma;
     public Vector3 posicionPlataforma;
 
-    //Animator animator_tuxxi;
+    Animator animator;
     public void MovimientoAdelante()
     {
         transform.position = Vector3.MoveTowards(transform.position, posicionPlataforma, velocidadMovimiento * Time.deltaTime);
@@ -65,15 +65,15 @@ public class MovimientoGeneral : MonoBehaviour, IMovimiento
         {
             if (Input.GetKey(teclaMovimientoAdelante) && !caminoBloqueado)
             {
+                animator.SetBool("dash", true);
                 posicionPlataforma = transform.position + distanciaPlataforma;
                 moverseAdelante = true;
-                //animator_tuxxi.SetBool("dash_tuxxi", true);
             }
             else if (Input.GetKey(teclaMovimientoAtras))
             {
+                animator.SetBool("dash", true);
                 posicionPlataforma = transform.position - distanciaPlataforma;
                 moverseAtras = true;
-                //animator_tuxxi.SetBool("dash_tuxxi", true);
             }
         }
     }
@@ -81,6 +81,7 @@ public class MovimientoGeneral : MonoBehaviour, IMovimiento
     void Start()
     {
         mirarAdelante = transform.rotation;
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -163,14 +164,10 @@ public class MovimientoGeneral : MonoBehaviour, IMovimiento
     }
     private void OnCollisionExit(Collision col)
     {
-        string tipoTag = col.gameObject.tag;
-        switch (tipoTag)
+        if (col.gameObject.CompareTag("Suelo") || col.gameObject.CompareTag("SueloTrampa"))
         {
-            case "Suelo":
-                enSuelo = false;
-                break;
-            default:
-                break;
+            animator.SetBool("dash", false);
+            enSuelo = false;
         }
     }
 }

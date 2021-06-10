@@ -13,6 +13,7 @@ public class MuroFuego : MonoBehaviour
     void Start()
     {
         posicion = transform.position;
+        objetivoRef = GameObject.FindGameObjectWithTag("Objetivo");
     }
 
     void FixedUpdate()
@@ -34,12 +35,11 @@ public class MuroFuego : MonoBehaviour
         }
         else if(distancia < 50f && distancia >=20f)
         {
-            //velocidad -= 0.2f * time.deltatime;
-            velocidad = 5;
+            velocidad = 3;
         }
         else if (distancia < 20f)
         {
-            velocidad = 3f;
+            velocidad = 2f;
         }
     }
 }

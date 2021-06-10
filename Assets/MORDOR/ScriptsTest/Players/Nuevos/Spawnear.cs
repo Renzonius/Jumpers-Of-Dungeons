@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawnear : MonoBehaviour
 {
@@ -8,16 +9,17 @@ public class Spawnear : MonoBehaviour
     public float tiempoSpawn;
     public Vector3 coordSpawn;
 
-    public GameObject cuerpoRef;
+    GameObject cuerpoRef;
 
     MovimientoGeneral movimientoSpt;
+
+    public GameObject marcadorSpawn;
 
     void SpawnearJugador()
     {
         tiempoSpawn -= Time.deltaTime;
-        if (tiempoSpawn <= 0)
+        if (tiempoSpawn < 1)
         {
-            //transform.position = new Vector3(-2f, 0, 0);
             transform.position = coordSpawn;
             cuerpoRef.SetActive(true);
             movimientoSpt.enabled = true;
@@ -49,10 +51,9 @@ public class Spawnear : MonoBehaviour
         switch (tipoTag)
         {
             case "Oscuridad":
-                //Restar puntaje
                 activarSpawn = true;
                 cuerpoRef.SetActive(false);
-                //Setear daño por pendulo
+                Instantiate(marcadorSpawn, coordSpawn + new Vector3(0,2f,0), marcadorSpawn.transform.rotation);
                 break;
             default:
                 break;

@@ -13,27 +13,48 @@ public class Cañon : MonoBehaviour
     bool disparo;
     public Animator retrocesoAnim;
 
+    float distanciaFuego;
+    GameObject bolaFuego;
 
+    public float tiempoDisparo;
+    ParticleSystem chispas;
+    bool prenderChispas;
     
     private void Start()
     {
         retrocesoAnim = GetComponent<Animator>();
+        bolaFuego = GameObject.FindGameObjectWithTag("BolaFuego");
+        chispas = transform.GetChild(3).GetComponent<ParticleSystem>();
     }
 
     void FixedUpdate()
     {
         Disparar();
+        DistanciaBolaFuego();
     }
 
     public void Disparar()
     {
         if (cantPolvora >= polvoraNecesaria)
         {
-            sptPorton.portonDestruido = true;
-            InstanciandoParticulas();
-            retrocesoAnim.Play("Retroceso");
-            cantPolvora = 0;
+            if (!prenderChispas)
+            {
+                chispas.Play();
+                prenderChispas = true;
+            }
+            if(tiempoDisparo <= 0)
+            {
+                sptPorton.portonDestruido = true;
+                InstanciandoParticulas();
+                retrocesoAnim.Play("Retroceso");
+                cantPolvora = 0;
+            }
+            else
+            {
+                tiempoDisparo -= Time.deltaTime;
+            }
         }
+   
     }
 
     public void InstanciandoParticulas()
@@ -45,12 +66,12 @@ public class Cañon : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider col)
+    void DistanciaBolaFuego()
     {
-        if(col.gameObject.tag == "BolaFuego")
+        distanciaFuego = Vector3.Distance(transform.position, bolaFuego.transform.position);
+        if(distanciaFuego <= 6)
         {
             cantPolvora = 6;
-            Debug.Log("Coliciono con bola de fuego");
         }
     }
 }

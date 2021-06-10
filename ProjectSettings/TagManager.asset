@@ -18,6 +18,11 @@ TagManager:
   - Prensadora
   - Moneda
   - BolaFuego
+  - Objetivo
+  - MarcaDragon
+  - Marca
+  - Salida
+  - Portal
   layers:
   - Default
   - TransparentFX

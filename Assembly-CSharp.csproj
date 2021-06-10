@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MORDOR\ScriptsTest\Cofre Item\Cofre_item.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Perder.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Menus\Menu_Principal.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\IInteraccion.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Menus\PuntajeP1.cs" />
@@ -85,6 +86,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Menus\SpawnP2.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Puntaje.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Ganar.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Obstaculo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Jaula\JaulaMovimiento.cs" />
@@ -151,7 +154,9 @@
     <Compile Include="Assets\MORDOR\ScriptsTest\PlayerController.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Items\items con multiplicador\Moneda.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\MovimientoPlayerUno.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Puntaje.cs" />
+    <Compile Include="Assets\MORDOR\HUD\HUDPuntaje.cs" />
+    <Compile Include="Assets\MORDOR\HUD\SennalSpawnP1.cs" />
+    <Compile Include="Assets\MORDOR\HUD\SennalSpawnP2.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

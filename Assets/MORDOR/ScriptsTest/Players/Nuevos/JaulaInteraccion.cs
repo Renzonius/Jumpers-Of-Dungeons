@@ -9,14 +9,26 @@ public class JaulaInteraccion : MonoBehaviour
     public bool usarDesactivador;
     public bool cercaDesactivador;
 
+    public Animator animator;
+    //Quaternion rotacionDeAccion;
+    //Quaternion rotacionActural;
+
     public void DesactivarTrampas()
     {
-        if (Input.GetKey(teclaInteraccion))
+        if (Input.GetKeyDown(teclaInteraccion))
         {
             usarDesactivador = true;
+            animator.SetTrigger("accion");
         }
         else
+        {
             usarDesactivador = false;
+        }
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()

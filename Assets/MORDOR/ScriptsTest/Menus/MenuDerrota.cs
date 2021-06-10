@@ -18,6 +18,10 @@ public class MenuPausa : MonoBehaviour
     //    sptPlayerDos = GameObject.FindGameObjectWithTag("Player2").GetComponent<ControlPlayerDos>();
     //}
 
+    private void Start()
+    {
+        
+    }
 
     void FixedUpdate()
     {

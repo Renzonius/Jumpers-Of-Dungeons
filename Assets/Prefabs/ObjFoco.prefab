@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8063992726467845472}
   m_Layer: 0
   m_Name: ObjFoco
-  m_TagString: Untagged
+  m_TagString: Objetivo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8063992726467845474}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188da802cac3b7b4fb27b8398a331e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 5987174069303038026, guid: fd10626bf1c534f49aacb5f42bea871a, type: 3}
-  player2: {fileID: 4275976122093333674, guid: be5ac7a8ad2f5ea4cbe383c22cb80f75, type: 3}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
   posPlayer1: {x: 0, y: 0, z: 0}
   posPlayer2: {x: 0, y: 0, z: 0}
   posFoco: {x: 0, y: 0, z: 0}
-  velocidadSmooth: 0.02
+  velocidadSmooth: 0.5

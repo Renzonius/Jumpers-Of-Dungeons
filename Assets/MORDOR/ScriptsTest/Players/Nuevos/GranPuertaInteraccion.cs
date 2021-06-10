@@ -9,29 +9,39 @@ public class GranPuertaInteraccion : MonoBehaviour
     bool cercaCannon;
 
     public string teclaParaInteractuar;
+
     Cañon sptCannon;
 
-
+    public Animator animator;
     public void TeclaCargarCannon()
     {
-        if (Input.GetKey(teclaParaInteractuar) && cercaCannon && llevaPolvora)
+        if (Input.GetKeyDown(teclaParaInteractuar) && cercaCannon && llevaPolvora)
         {
+            animator.SetTrigger("accion");
             CargarCannon();
             llevaPolvora = false;
         }
+
+
     }
 
     public void TeclaTomarPolvora()
     {
-        if (Input.GetKey(teclaParaInteractuar) && cercaBarril)
+        if (Input.GetKeyDown(teclaParaInteractuar) && cercaBarril)
         {
             llevaPolvora = true;
+            animator.SetTrigger("accion");
         }
     }
 
     void CargarCannon()
     {
         sptCannon.cantPolvora++;
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
     }
 
     void Update()

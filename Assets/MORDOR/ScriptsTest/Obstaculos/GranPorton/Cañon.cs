@@ -10,7 +10,7 @@ public class Cañon : MonoBehaviour
 
     public GameObject spawnParticulas;
     public GameObject particulasDisparo;
-    bool disparo;
+    public bool disparo;
     public Animator retrocesoAnim;
 
     float distanciaFuego;

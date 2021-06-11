@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aplastado: 0
   tiempoAplastado: 0
+  particulasDoblenes: {fileID: 336778789275401540, guid: 620771a06a8c7af4f90776f0b7a49278, type: 3}
 --- !u!114 &5857305676497617242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +187,7 @@ MonoBehaviour:
   tiempoSpawn: 0
   coordSpawn: {x: 0, y: 0, z: 0}
   marcadorSpawn: {fileID: 6348592800066864758, guid: eea7d0108f708d94681e6b431b34679e, type: 3}
+  particulasMonedas: {fileID: 336778789275401540, guid: 620771a06a8c7af4f90776f0b7a49278, type: 3}
 --- !u!114 &5857305676497617239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +313,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 67e2eb2e617502d43ba0a5b458ab4396, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 67e2eb2e617502d43ba0a5b458ab4396, type: 3}
 --- !u!4 &6252101326282067696 stripped
 Transform:

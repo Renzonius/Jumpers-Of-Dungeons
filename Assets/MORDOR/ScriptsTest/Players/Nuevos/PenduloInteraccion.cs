@@ -10,6 +10,7 @@ public class PenduloInteraccion : MonoBehaviour
 
     public MovimientoGeneral movimientoSpt;
 
+    Animator animator;
 
     void CortePendulo()
     {
@@ -20,6 +21,7 @@ public class PenduloInteraccion : MonoBehaviour
     void Start()
     {
         movimientoSpt = GetComponent<MovimientoGeneral>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -27,6 +29,7 @@ public class PenduloInteraccion : MonoBehaviour
         if (jugadorCortado)
         {
             CortePendulo();
+            animator.SetBool("caida", true);
         }
     }
 

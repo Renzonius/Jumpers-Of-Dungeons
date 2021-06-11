@@ -15,11 +15,16 @@ public class Spawnear : MonoBehaviour
 
     public GameObject marcadorSpawn;
 
+    public GameObject particulasMonedas;
+
+    Animator animator;
+
     void SpawnearJugador()
     {
         tiempoSpawn -= Time.deltaTime;
         if (tiempoSpawn < 1)
         {
+            animator.SetBool("caida", false);
             transform.position = coordSpawn;
             cuerpoRef.SetActive(true);
             movimientoSpt.enabled = true;
@@ -35,6 +40,7 @@ public class Spawnear : MonoBehaviour
         tiempoSpawn = 3f;
         coordSpawn = transform.position;
         cuerpoRef = gameObject.transform.GetChild(0).gameObject;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -51,6 +57,7 @@ public class Spawnear : MonoBehaviour
         switch (tipoTag)
         {
             case "Oscuridad":
+                Instantiate(particulasMonedas, transform.position, particulasMonedas.transform.rotation);
                 activarSpawn = true;
                 cuerpoRef.SetActive(false);
                 Instantiate(marcadorSpawn, coordSpawn + new Vector3(0,2f,0), marcadorSpawn.transform.rotation);

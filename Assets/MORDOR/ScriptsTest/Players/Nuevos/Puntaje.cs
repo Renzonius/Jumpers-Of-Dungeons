@@ -18,15 +18,6 @@ public class Puntaje : MonoBehaviour, IPuntaje
         if(puntaje >0)
             puntaje -= puntaje *30 /100;
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider col)
     {
@@ -36,7 +27,7 @@ public class Puntaje : MonoBehaviour, IPuntaje
             case "Oscuridad":
                 RestarPuntaje();
                 break;
-            case "Prensa":
+            case "Prensadora":
                 RestarPuntaje();
                 break;
             case "Moneda":

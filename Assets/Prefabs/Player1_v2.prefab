@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aplastado: 0
   tiempoAplastado: 0
+  particulasDoblenes: {fileID: 336778789275401540, guid: 620771a06a8c7af4f90776f0b7a49278, type: 3}
 --- !u!114 &997373677384461258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +187,7 @@ MonoBehaviour:
   tiempoSpawn: 0
   coordSpawn: {x: 0, y: 0, z: 0}
   marcadorSpawn: {fileID: 6348592800066864758, guid: b36ed8e8e64cceb4aacec7d24c5eb9d0, type: 3}
-  sennalSpawn: {fileID: 0}
+  particulasMonedas: {fileID: 336778789275401540, guid: 620771a06a8c7af4f90776f0b7a49278, type: 3}
 --- !u!114 &997373677384461263
 MonoBehaviour:
   m_ObjectHideFlags: 0

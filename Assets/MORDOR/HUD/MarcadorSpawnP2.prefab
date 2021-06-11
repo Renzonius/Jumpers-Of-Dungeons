@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 6348592800066864752}
   - component: {fileID: 6846668172951204115}
   m_Layer: 0
-  m_Name: MarcadorCalaveraP2
+  m_Name: MarcadorSpawnP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 43394ffa8a8c29843921e1476ba9c536, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 643bd38d11dd61c4cb229814de5fc9b1, type: 3}
   m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   m_FlipX: 0
   m_FlipY: 0

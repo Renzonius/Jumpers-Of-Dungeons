@@ -76,6 +76,7 @@
     <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Jaula\Activador.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\Proyectil.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Items\Doblon.cs" />
+    <Compile Include="Assets\MORDOR\HUD\Marcadores\SennalSpawnP2.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Jaula\Desactivador.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Menus\HighScore.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\General.cs" />
@@ -107,10 +108,12 @@
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\GranPuertaInteraccion.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\JaulaObst.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Menus\MenuDerrota.cs" />
+    <Compile Include="Assets\MORDOR\HUD\HUDPuntaje.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\ObstPared\TrampaPared.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Antorcha\EfectoAntorcha.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\MORDOR\HUD\Marcadores\SennalSpawnP1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\PenduloInteraccion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
@@ -154,9 +157,9 @@
     <Compile Include="Assets\MORDOR\ScriptsTest\PlayerController.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Items\items con multiplicador\Moneda.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\MovimientoPlayerUno.cs" />
-    <Compile Include="Assets\MORDOR\HUD\HUDPuntaje.cs" />
-    <Compile Include="Assets\MORDOR\HUD\SennalSpawnP1.cs" />
-    <Compile Include="Assets\MORDOR\HUD\SennalSpawnP2.cs" />
+    <Compile Include="Assets\MORDOR\Particulas\ParticulasDoblenes.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\BarrilPolvora.cs" />
+    <Compile Include="Assets\MORDOR\HUD\Marcadores\MarcadorCannon.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

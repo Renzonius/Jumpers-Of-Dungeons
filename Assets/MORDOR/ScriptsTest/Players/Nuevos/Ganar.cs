@@ -16,6 +16,7 @@ public class Ganar : MonoBehaviour
 
     public GameObject cuerpo;
     CapsuleCollider colRef;
+    Rigidbody rigidRef;
 
     void Start()
     {
@@ -23,11 +24,16 @@ public class Ganar : MonoBehaviour
         animator = GetComponent<Animator>();
         cuerpo = transform.GetChild(0).gameObject;
         colRef = GetComponent<CapsuleCollider>();
+        rigidRef = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
         CorrerHaciaPortal();
+        if (portalJugador)
+        {
+            ReseteadorPosicion();
+        }
     }
 
     void CorrerHaciaPortal()
@@ -44,6 +50,14 @@ public class Ganar : MonoBehaviour
         }
     }
 
+    void ReseteadorPosicion()
+    {
+        if(transform.position.y < -7f)
+        {
+            transform.position = portal.transform.position;
+        }
+    }
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Salida"))
@@ -54,6 +68,7 @@ public class Ganar : MonoBehaviour
         {
             cuerpo.SetActive(false);
             colRef.enabled = false;
+            rigidRef.useGravity = false;
             portalJugador = true;
         }
     }

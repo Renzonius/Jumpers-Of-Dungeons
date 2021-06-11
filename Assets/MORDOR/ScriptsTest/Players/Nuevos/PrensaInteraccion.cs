@@ -10,6 +10,8 @@ public class PrensaInteraccion : MonoBehaviour
     Vector3 escala;
     Vector3 escalaPredeterminada;
 
+    public GameObject particulasDoblenes;
+
     void Aplastamiento()
     {
         escala = transform.localScale;
@@ -46,6 +48,7 @@ public class PrensaInteraccion : MonoBehaviour
         string tipoTag = col.gameObject.tag;
         if (tipoTag == "Prensadora")
         {
+            Instantiate(particulasDoblenes, transform.position, particulasDoblenes.transform.rotation);
             aplastado = true;
             Aplastamiento();
         }

@@ -48,4 +48,4 @@ MonoBehaviour:
   posPlayer1: {x: 0, y: 0, z: 0}
   posPlayer2: {x: 0, y: 0, z: 0}
   posFoco: {x: 0, y: 0, z: 0}
-  velocidadSmooth: 0.5
+  velocidadSmooth: 1

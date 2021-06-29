@@ -485,7 +485,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3620489927090241808, guid: 275b391aa13ae1842b6abdf71903253a, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3620489927090241808, guid: 275b391aa13ae1842b6abdf71903253a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -833,6 +833,8 @@ MonoBehaviour:
   teclaInteraccion: u
   usarDesactivador: 0
   cercaDesactivador: 0
+  sptJaula: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!4 &1617695309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4991392371441162242, guid: 1be8d12eb7992a5479c79f4fb0f207d3, type: 3}
@@ -1029,67 +1031,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4991392371441162242, guid: 1be8d12eb7992a5479c79f4fb0f207d3, type: 3}
   m_PrefabInstance: {fileID: 1707274326}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1960851216
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918136, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918138, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_Name
-      value: ObstJaulaDer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312550724263918138, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8895ad3e177c569428342b6702b7eb28, type: 3}
 --- !u!1 &2029683601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1131,8 @@ MonoBehaviour:
   teclaInteraccion: e
   usarDesactivador: 0
   cercaDesactivador: 0
+  sptJaula: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1001 &2107259470
 PrefabInstance:
   m_ObjectHideFlags: 0

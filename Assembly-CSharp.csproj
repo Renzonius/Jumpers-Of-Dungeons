@@ -56,120 +56,111 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MORDOR\ScriptsTest\Cofre Item\Cofre_item.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Perder.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\Menu_Principal.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\IInteraccion.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\PuntajeP1.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\ActivadorJaula.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Items\HileraItems.cs" />
+    <Compile Include="Assets\Scripts\ItemsScripts\Cofre\Cofre_item.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\Perder.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\Menu_Principal.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\Puntaje Scripts\Guardar.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\ContadorPuntaje.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\PuntajeP1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\ActivadorObst.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Camara\MovimientoObjFoco.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Cofre Item\Cofre_animado_item.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Spawnear.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\DesactivadorObst.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\ParabolaController.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Camara\MovimientoCamara.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\JaulaInteraccion.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Jaula\Activador.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\Proyectil.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Items\Doblon.cs" />
-    <Compile Include="Assets\MORDOR\HUD\Marcadores\SennalSpawnP2.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Jaula\Desactivador.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\HighScore.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\MovimientoObjFoco.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\Spawnear.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\ParabolaController.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\MovimientoCamara.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\JaulaInteraccion.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\Puntaje Scripts\HighScoreTable.cs" />
+    <Compile Include="Assets\Scripts\JaulaScripts\Activador.cs" />
+    <Compile Include="Assets\HUD\Marcadores\SennalSpawnP2.cs" />
+    <Compile Include="Assets\Scripts\JaulaScripts\Desactivador.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\Buchon.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\HighScore.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\General.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\PuntajeP2.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\PuntajeP2.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\Cañon.cs" />
+    <Compile Include="Assets\Scripts\GranPuerta\Cañon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\SpawnP2.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Puntaje.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\Ganar.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Obstaculo.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\SpawnP2.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\Puntaje.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\Ganar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Jaula\JaulaMovimiento.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\MathParabola.cs" />
+    <Compile Include="Assets\Scripts\JaulaScripts\JaulaMovimiento.cs" />
+    <Compile Include="Assets\Scripts\MathParabola.cs" />
+    <Compile Include="Assets\Particulas\ParticulasDoblenes.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\ControlPlayerUno.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Player2Controller.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\InventarioPlayerUno.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\PlataformaFuego\FuegoPlataforma.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\IMovimiento.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Raton.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\Interfaces\IMovimiento.cs" />
+    <Compile Include="Assets\Scripts\Raton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\MovimientoGeneral.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\MovimientoGeneral.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\Player.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\PlataformaPrensadora\Prensadora.cs" />
+    <Compile Include="Assets\HUD\Marcadores\MarcadorCannon.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\CamaraTitulo.cs" />
+    <Compile Include="Assets\Scripts\PrensadoraScripts\Prensadora.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\GranPuertaInteraccion.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\JaulaObst.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\MenuDerrota.cs" />
-    <Compile Include="Assets\MORDOR\HUD\HUDPuntaje.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\ObstPared\TrampaPared.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\GranPuertaInteraccion.cs" />
+    <Compile Include="Assets\HUD\HUDPuntaje.cs" />
+    <Compile Include="Assets\Scripts\ParedScripts\TrampaPared.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Antorcha\EfectoAntorcha.cs" />
+    <Compile Include="Assets\Scripts\AntorchaScripts\EfectoAntorcha.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\MORDOR\HUD\Marcadores\SennalSpawnP1.cs" />
+    <Compile Include="Assets\ChatBot\GameManager.cs" />
+    <Compile Include="Assets\HUD\Marcadores\SennalSpawnP1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\PenduloInteraccion.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\PenduloInteraccion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\MORDOR\ScriptsTest\Players\ControlPlayerDos.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\PrensaInteraccion.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\PrensaInteraccion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\PlataformaFuego\VaporPlataforma.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\MenuVictoria.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\MenuVictoria.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\PuntajeUI.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\ObstPared\DesactivadorPared.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\PuntajeUI.cs" />
+    <Compile Include="Assets\Scripts\ParedScripts\DesactivadorPared.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\Menu_Derrota.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Drakan\Chatbot_drakan.cs" />
+    <Compile Include="Assets\MORDOR\ScriptsTest\MenuDePerder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\IPuntaje.cs" />
+    <Compile Include="Assets\Scripts\PlayersScripts\Interfaces\IPuntaje.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Menus\SpawnP1.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\SpawnP1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Items\ContenedorItems.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\Pendulo.cs" />
+    <Compile Include="Assets\Scripts\Pendulo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Items\Tesoro.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\MuroObst.cs" />
+    <Compile Include="Assets\Scripts\ItemsScripts\Tesoro.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\MenusScripts\Puntaje Scripts\Recarga.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\GranPorton.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Muro de Fuego\MuroFuego.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\PlayerController.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Items\items con multiplicador\Moneda.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Players\Nuevos\MovimientoPlayerUno.cs" />
-    <Compile Include="Assets\MORDOR\Particulas\ParticulasDoblenes.cs" />
-    <Compile Include="Assets\MORDOR\ScriptsTest\Obstaculos\GranPorton\BarrilPolvora.cs" />
-    <Compile Include="Assets\MORDOR\HUD\Marcadores\MarcadorCannon.cs" />
+    <Compile Include="Assets\Scripts\GranPuerta\BarrilPolvora.cs" />
+    <Compile Include="Assets\Scripts\GranPuerta\GranPorton.cs" />
+    <Compile Include="Assets\Scripts\BolaFuegoScripts\MuroFuego.cs" />
+    <Compile Include="Assets\Scripts\ItemsScripts\Doblon\Moneda.cs" />
+    <Compile Include="Assets\Scripts\Bandera.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\ChatBot\Syn.Bot\Syn.VA.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\ChatBot\Syn.Bot\Newtonsoft.Json.dll" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\ChatBot\Syn.Bot\Syn.Workspace.dll" />
+     <None Include="Assets\ChatBot\Syn.Bot\Syn.Bot.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -177,14 +168,18 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\ChatBot\Syn.Bot\Syn.Utilities.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\ChatBot\Syn.Bot\Syn.Oryzer.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\ChatBot\Syn.Bot\Jint.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\ChatBot\Syn.Bot\Syn.Bot.dll" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -374,6 +369,27 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.VA">
+      <HintPath>Assets\ChatBot\Syn.Bot\Syn.VA.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Bot">
+      <HintPath>Assets\ChatBot\Syn.Bot\Syn.Bot.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Utilities">
+      <HintPath>Assets\ChatBot\Syn.Bot\Syn.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint">
+      <HintPath>Assets\ChatBot\Syn.Bot\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Oryzer">
+      <HintPath>Assets\ChatBot\Syn.Bot\Syn.Oryzer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets\ChatBot\Syn.Bot\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Workspace">
+      <HintPath>Assets\ChatBot\Syn.Bot\Syn.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -726,6 +742,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
@@ -761,6 +780,12 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>

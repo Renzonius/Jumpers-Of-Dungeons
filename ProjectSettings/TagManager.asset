@@ -23,6 +23,9 @@ TagManager:
   - Marca
   - Salida
   - Portal
+  - HUDPuntaje
+  - Hilera
+  - Bandera
   layers:
   - Default
   - TransparentFX
